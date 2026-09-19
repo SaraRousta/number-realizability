@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="resources/coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="resources/coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resources/config.js"></script>
+<script type="text/javascript" src="resources/coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="../">Project Page</a>
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">NumberRealizability.BoundedTactics</h1>
+
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">SyntheticComputability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">EPF</span> <span class="id" title="library">partial</span> <span class="id" title="library">equiv_on</span> <span class="id" title="library">Definitions</span> <span class="id" title="library">reductions</span> <span class="id" title="library">embed_nat</span>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Stdlib</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">Lia</span> <span class="id" title="library">Arith</span> <span class="id" title="library">Vector</span>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="keyword">Equations</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">Equations</span>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">FOL</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">FullSyntax</span> <span class="id" title="library">Arithmetics</span>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Stdlib</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">Program.Equality</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <span class="id" title="module">EmbedNatNotations</span>.<br/>
+<span class="id" title="keyword">Import</span> <span class="id" title="module">VectorNotations</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Stdlib</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">List</span>.<br/>
+<span class="id" title="keyword">Import</span> <span class="id" title="module">ListNotations</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">NumberRealizability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="NumberRealizability.Core.html#"><span class="id" title="library">Core</span></a> <a class="idref" href="NumberRealizability.Facts.html#"><span class="id" title="library">Facts</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Section</span> <a id="BoundedFacts" class="idref" href="#BoundedFacts"><span class="id" title="section">BoundedFacts</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="bounded_L_cons" class="idref" href="#bounded_L_cons"><span class="id" title="lemma">bounded_L_cons</span></a> {<a id="f:1" class="idref" href="#f:1"><span class="id" title="binder">f</span></a> : <span class="id" title="class">falsity_flag</span>} <a id="n:2" class="idref" href="#n:2"><span class="id" title="binder">n</span></a> (<a id="4285642db9f9c7b847d79f5d0db46174" class="idref" href="#4285642db9f9c7b847d79f5d0db46174"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>) (<a id="9cfd66c80bf9988ea8f7104e167ac5cd" class="idref" href="#9cfd66c80bf9988ea8f7104e167ac5cd"><span class="id" title="binder">Γ</span></a> : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <span class="id" title="inductive">form</span>) :<br/>
+&nbsp;&nbsp;<span class="id" title="definition">bounded_L</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#n:2"><span class="id" title="variable">n</span></a> (<a class="idref" href="NumberRealizability.BoundedTactics.html#4285642db9f9c7b847d79f5d0db46174"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#::list_scope:x_'::'_x"><span class="id" title="notation">::</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#9cfd66c80bf9988ea8f7104e167ac5cd"><span class="id" title="variable">Γ</span></a>) <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"><span class="id" title="notation">&lt;-&gt;</span></a> <span class="id" title="inductive">bounded</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#n:2"><span class="id" title="variable">n</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#4285642db9f9c7b847d79f5d0db46174"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">/\</span></a> <span class="id" title="definition">bounded_L</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#n:2"><span class="id" title="variable">n</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#9cfd66c80bf9988ea8f7104e167ac5cd"><span class="id" title="variable">Γ</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="definition">bounded_L</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">firstorder</span>. <span class="id" title="tactic">subst</span>. <span class="id" title="tactic">auto</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="bounded_L_map" class="idref" href="#bounded_L_map"><span class="id" title="lemma">bounded_L_map</span></a> {<a id="f:5" class="idref" href="#f:5"><span class="id" title="binder">f</span></a> : <span class="id" title="class">falsity_flag</span>} <a id="n:6" class="idref" href="#n:6"><span class="id" title="binder">n</span></a> <a id="m:7" class="idref" href="#m:7"><span class="id" title="binder">m</span></a> <a id="g:8" class="idref" href="#g:8"><span class="id" title="binder">g</span></a> <a id="a27a3f5be2c643b658176c4fa6dd32d6" class="idref" href="#a27a3f5be2c643b658176c4fa6dd32d6"><span class="id" title="binder">Γ</span></a> :<br/>
+&nbsp;&nbsp;<a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">(</span></a><span class="id" title="keyword">forall</span> <a id="ec4b304ddf42d851d75fca6932b4d645" class="idref" href="#ec4b304ddf42d851d75fca6932b4d645"><span class="id" title="binder">φ</span></a>, <span class="id" title="inductive">bounded</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#n:6"><span class="id" title="variable">n</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#ec4b304ddf42d851d75fca6932b4d645"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="inductive">bounded</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#m:7"><span class="id" title="variable">m</span></a> (<a class="idref" href="NumberRealizability.BoundedTactics.html#g:8"><span class="id" title="variable">g</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#ec4b304ddf42d851d75fca6932b4d645"><span class="id" title="variable">φ</span></a>)<a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">)</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a><br/>
+&nbsp;&nbsp;<span class="id" title="definition">bounded_L</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#n:6"><span class="id" title="variable">n</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#a27a3f5be2c643b658176c4fa6dd32d6"><span class="id" title="variable">Γ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="definition">bounded_L</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#m:7"><span class="id" title="variable">m</span></a> (<a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Lists.ListDef.html#map"><span class="id" title="definition">map</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#g:8"><span class="id" title="variable">g</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#a27a3f5be2c643b658176c4fa6dd32d6"><span class="id" title="variable">Γ</span></a>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>. <span class="id" title="tactic">induction</span> <span class="id" title="var">Γ</span>; <span class="id" title="var">cbn</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">firstorder</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">intros</span> ? [&lt;- | ?]; <span class="id" title="tactic">firstorder</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="bounded_up_L" class="idref" href="#bounded_up_L"><span class="id" title="lemma">bounded_up_L</span></a> {<a id="f:11" class="idref" href="#f:11"><span class="id" title="binder">f</span></a> : <span class="id" title="class">falsity_flag</span>} <a id="n:12" class="idref" href="#n:12"><span class="id" title="binder">n</span></a> <a id="k:13" class="idref" href="#k:13"><span class="id" title="binder">k</span></a> (<a id="6f77cad99d2eda9ef19109858c066b07" class="idref" href="#6f77cad99d2eda9ef19109858c066b07"><span class="id" title="binder">Γ</span></a> : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <span class="id" title="inductive">form</span>) :<br/>
+&nbsp;&nbsp;<span class="id" title="definition">bounded_L</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#n:12"><span class="id" title="variable">n</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#6f77cad99d2eda9ef19109858c066b07"><span class="id" title="variable">Γ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#k:13"><span class="id" title="variable">k</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Peano.html#73030c22bc0b1fa771c65aa5414c65f9"><span class="id" title="notation">&gt;=</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#n:12"><span class="id" title="variable">n</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="definition">bounded_L</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#k:13"><span class="id" title="variable">k</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#6f77cad99d2eda9ef19109858c066b07"><span class="id" title="variable">Γ</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="definition">bounded_L</span>. <span class="id" title="tactic">eauto</span> <span class="id" title="keyword">using</span> <span class="id" title="lemma">bounded_up</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="bounded_nil" class="idref" href="#bounded_nil"><span class="id" title="lemma">bounded_nil</span></a> {<a id="f:15" class="idref" href="#f:15"><span class="id" title="binder">f</span></a> : <span class="id" title="class">falsity_flag</span>} : <span class="id" title="keyword">forall</span> <a id="n:16" class="idref" href="#n:16"><span class="id" title="binder">n</span></a>, @<span class="id" title="definition">bounded_L</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#f:15"><span class="id" title="variable">f</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#n:16"><span class="id" title="variable">n</span></a> <span class="id" title="abbreviation">List.nil</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> [].<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="bounded_subst_num" class="idref" href="#bounded_subst_num"><span class="id" title="lemma">bounded_subst_num</span></a> {<a id="f:17" class="idref" href="#f:17"><span class="id" title="binder">f</span></a> : <span class="id" title="class">falsity_flag</span>} (<a id="7d5e13789b0c6cc8575b0ea97e93b653" class="idref" href="#7d5e13789b0c6cc8575b0ea97e93b653"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>) <a id="n:19" class="idref" href="#n:19"><span class="id" title="binder">n</span></a> : <br/>
+&nbsp;&nbsp;<span class="id" title="inductive">bounded</span> 1 <a class="idref" href="NumberRealizability.BoundedTactics.html#7d5e13789b0c6cc8575b0ea97e93b653"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="inductive">bounded</span> 0 (<a class="idref" href="NumberRealizability.BoundedTactics.html#7d5e13789b0c6cc8575b0ea97e93b653"><span class="id" title="variable">φ</span></a> <span class="id" title="notation">[</span><span class="id" title="notation">(</span><span class="id" title="definition">num</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#n:19"><span class="id" title="variable">n</span></a><span class="id" title="notation">)</span>..<span class="id" title="notation">]</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="lemma">subst_bounded_max</span> <span class="id" title="keyword">with</span> (<span class="id" title="var">n</span> := 1); <span class="id" title="tactic">try</span> <span class="id" title="tactic">assumption</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> [] ?. <span class="id" title="tactic">apply</span> <span class="id" title="lemma">num_bound</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">enough</span> (<a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a> <span class="id" title="keyword">forall</span> <a id="n:20" class="idref" href="#n:20"><span class="id" title="binder"><span id="n:21" class="id">n</span></span></a>, <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#S"><span class="id" title="constructor">S</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#n:20"><span class="id" title="variable">n</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Peano.html#::nat_scope:x_'&lt;'_x"><span class="id" title="notation">&lt;</span></a> 1).<br/>
+&nbsp;&nbsp;<span class="id" title="var">all</span> : <span class="id" title="var">lia</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#BoundedFacts"><span class="id" title="section">BoundedFacts</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">decompose_bounded</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span> : <span class="id" title="definition">bounded_L</span> <span class="id" title="var">_</span> (<span class="id" title="var">_</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#::list_scope:x_'::'_x"><span class="id" title="notation">::</span></a> <span class="id" title="var">_</span>) |- <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">apply</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#bounded_L_cons"><span class="id" title="lemma">bounded_L_cons</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span> <span class="id" title="keyword">as</span> []<br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span> : <span class="id" title="inductive">bounded</span> <span class="id" title="var">_</span> (<span class="id" title="constructor">atom</span> <span class="id" title="var">_</span>) |- <span class="id" title="var">_</span> =&gt; <span class="id" title="var">depelim</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span> : <span class="id" title="inductive">bounded</span> <span class="id" title="var">_</span> (<span class="id" title="constructor">bin</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>) |- <span class="id" title="var">_</span> =&gt; <span class="id" title="var">depelim</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span> : <span class="id" title="inductive">bounded</span> <span class="id" title="var">_</span> (<span class="id" title="constructor">quant</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>) |- <span class="id" title="var">_</span> =&gt; <span class="id" title="var">depelim</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">prove_bounded</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="definition">bounded_L</span> <span class="id" title="var">_</span> (<span class="id" title="var">_</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#::list_scope:x_'::'_x"><span class="id" title="notation">::</span></a> <span class="id" title="var">_</span>) =&gt; <span class="id" title="tactic">apply</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#bounded_L_cons"><span class="id" title="lemma">bounded_L_cons</span></a> ; <span class="id" title="tactic">split</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="definition">bounded_L</span> <span class="id" title="var">_</span> <span class="id" title="abbreviation">List.nil</span> =&gt; <span class="id" title="tactic">apply</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#bounded_nil"><span class="id" title="lemma">bounded_nil</span></a><br/>
+&nbsp;&nbsp;| |- <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">assumption</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="inductive">bounded</span> <span class="id" title="var">_</span> (<span class="id" title="constructor">atom</span> <span class="id" title="var">_</span>) =&gt; <span class="id" title="tactic">econstructor</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="inductive">bounded</span> <span class="id" title="var">_</span> (<span class="id" title="constructor">bin</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>) =&gt; <span class="id" title="tactic">econstructor</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="inductive">bounded</span> <span class="id" title="var">_</span> (<span class="id" title="definition">subst_form</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>) =&gt; <span class="id" title="tactic">eapply</span> <span class="id" title="lemma">subst_bounded_max</span>; [ | <span class="id" title="var">eassumption</span>];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span> [] ?; <span class="id" title="var">cbn</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <span class="id" title="lemma">bounded_up_t</span>; [ <span class="id" title="var">eassumption</span> | <span class="id" title="var">lia</span>]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="tactic">econstructor</span>; <span class="id" title="var">lia</span>]<br/>
+&nbsp;&nbsp;| |- <span class="id" title="definition">bounded_L</span> <span class="id" title="var">_</span> (<a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Lists.ListDef.html#map"><span class="id" title="definition">map</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span>) =&gt;  <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#bounded_L_map"><span class="id" title="lemma">bounded_L_map</span></a>;  [ | <span class="id" title="var">eassumption</span> ];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>; <span class="id" title="tactic">eapply</span> <span class="id" title="lemma">subst_bounded_max</span>; [ | <span class="id" title="var">eassumption</span>]; <span class="id" title="tactic">econstructor</span>; <span class="id" title="var">lia</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span> : <span class="id" title="inductive">bounded</span> <span class="id" title="var">_</span> ?φ |- <span class="id" title="inductive">bounded</span> <span class="id" title="var">_</span> ?φ =&gt; <span class="id" title="tactic">eapply</span> <span class="id" title="lemma">bounded_up</span>; [ <span class="id" title="var">eassumption</span> | <span class="id" title="var">lia</span>]<br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span> : <span class="id" title="inductive">bounded_t</span> <span class="id" title="var">_</span> ?<span class="id" title="var">t</span> |- <span class="id" title="inductive">bounded_t</span> <span class="id" title="var">_</span> ?<span class="id" title="var">t</span> =&gt; <span class="id" title="tactic">eapply</span> <span class="id" title="lemma">bounded_up_t</span>; [ <span class="id" title="var">eassumption</span> | <span class="id" title="var">lia</span>]<br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span> : <span class="id" title="definition">bounded_L</span> <span class="id" title="var">_</span> ?<span class="id" title="var">Γ</span> |- <span class="id" title="definition">bounded_L</span> <span class="id" title="var">_</span> ?<span class="id" title="var">Γ</span> =&gt; <span class="id" title="tactic">eapply</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#bounded_up_L"><span class="id" title="lemma">bounded_up_L</span></a>; [ <span class="id" title="var">eassumption</span> | <span class="id" title="var">lia</span>]<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">solve_bounded</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">decompose_bounded</span> ;<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">prove_bounded</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">solve_form_closed</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span> : <span class="id" title="var">_</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <span class="id" title="var">_</span> |- <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="inductive">bounded</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">constructor</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">solve_term_closed</span> := <br/>
+&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span> <br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span> : <span class="id" title="var">_</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <span class="id" title="var">_</span> |- <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">rewrite</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="inductive">bounded_t</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">constructor</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="keyword">forall</span> <span class="id" title="var">_</span>, <span class="id" title="var">_</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">intros</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span> : <span class="id" title="inductive">Vector.In</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> |- <span class="id" title="var">_</span> =&gt; <span class="id" title="var">depelim</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span> : <span class="id" title="var">_</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#f031fe1957c4a4a8e217aa46af2b4e25"><span class="id" title="notation">\/</span></a> <span class="id" title="var">_</span> |- <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="var">_</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Peano.html#::nat_scope:x_'&gt;'_x"><span class="id" title="notation">&gt;</span></a> <span class="id" title="var">_</span> =&gt; <span class="id" title="var">lia</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">solve_bounded_closed</span> := <br/>
+&nbsp;&nbsp;<span class="id" title="var">solve_form_closed</span> ;<br/>
+&nbsp;&nbsp;<span class="id" title="var">solve_term_closed</span>.<br/>
+
+<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/coq-community/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>
