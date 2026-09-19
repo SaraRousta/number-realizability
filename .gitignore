@@ -1,0 +1,27 @@
+# Rocq compiled files
+*.vo
+*.vos
+*.vok
+*.vio
+*.glob
+
+# Rocq auxiliary files and caches
+.*.aux
+.lia.cache
+.Makefile.d
+.coq-native/
+.rocq-native/
+
+# Generated build files
+Makefile
+Makefile.conf
+
+# Generated documentation
+html/
+
+# Editor and operating-system files
+.DS_Store
+*~
+
+# Local VS Code configuration
+.vscode/
