@@ -6,8 +6,6 @@ This development accompanies the master's thesis:
 
 > Sara Rousta, *A Synthetic Reconstruction of Troelstra's Characterization of Number Realizability in Rocq*, September 2026.
 
-The project is currently maintained as a standalone Rocq development. Its eventual integration into the FOL or Undecidability libraries remains to be determined.
-
 ## Mathematical overview
 
 Kleene number realizability gives computational meaning to formulas of intuitionistic arithmetic. A formula is not interpreted merely as true or false: a natural number realizing the formula provides computational evidence for it.
