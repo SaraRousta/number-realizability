@@ -12,8 +12,9 @@
 .coq-native/
 .rocq-native/
 
-# Generated build files
-Makefile
+# Generated Rocq build files
+Makefile.coq
+Makefile.coq.conf
 Makefile.conf
 
 # Generated documentation
