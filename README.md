@@ -162,6 +162,19 @@ This is the configuration in which the complete project has been tested.
 
 ## Building the project
 
+Clone the repository together with its CoqdocJS submodule:
+
+```sh
+git clone --recurse-submodules git@github.com:SaraRousta/number-realizability.git
+cd number-realizability
+```
+
+If the repository was cloned without its submodules, retrieve them afterwards with:
+
+```sh
+git submodule update --init --recursive
+```
+
 Activate the tested opam switch e.g.:
 
 ```sh
@@ -169,25 +182,45 @@ opam switch rocq9.0-synthetic-realizability
 eval "$(opam env)"
 ```
 
-Enter the project directory:
+Compile the project:
 
 ```sh
-cd NumberRealizability
+make -j2
 ```
+
+The permanent `Makefile` automatically generates `Makefile.coq` from `_CoqProject` when necessary and then delegates compilation to it. The option `-j2` permits up to two independent compilation jobs to run in parallel. Use `make` for sequential compilation.
 
 For a clean rebuild:
 
 ```sh
 make clean
-rocq makefile -f _CoqProject -o Makefile
-make 
+make -j2
 ```
 
-On installations that retain the older command name, generate the Makefile with:
+## HTML documentation
+
+Generate browsable HTML documentation with:
 
 ```sh
-coq_makefile -f _CoqProject -o Makefile
+make html
 ```
+
+The documentation is written to the generated `html` directory. CoqdocJS provides improved navigation, configurable Unicode display, and proofs that are collapsed by default and can be expanded by clicking `Proof...`.
+
+Open the local documentation homepage with:
+
+```sh
+xdg-open html/index.html
+```
+
+Each declaration receives a stable HTML anchor. For example, the generalized soundness theorem is available locally at:
+
+```text
+html/NumberRealizability.Soundness.html#realizes_sound_ND
+```
+
+The generated `html` directory is not committed because it can be reproduced from the Rocq sources and will be published separately through GitHub Pages.
+
 
 ## Logical namespace
 
@@ -219,4 +252,7 @@ The Rocq development principally corresponds to Chapters 4 and 5 of the thesis:
 
 The earlier thesis chapters provide the necessary background on the Calculus of Inductive Constructions, synthetic computability, first-order arithmetic, and the traditional internal development of number realizability.
 
+## Development assistance
+
+ChatGPT was used to assist with reorganizing the original already complete Rocq development into a standalone project, reviewing naming and file structure, diagnosing compilation errors during the reorganization, preparing the build and documentation configuration, and drafting parts of this README. 
 
