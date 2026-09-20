@@ -10,6 +10,7 @@ Import ListNotations.
 
 From NumberRealizability Require Import Core Facts BoundedTactics.
 
+(** * Realizing the Axioms of Arithmetic *)
 
 Section NumberRealizability.
   Variable Part : partiality.
@@ -43,7 +44,6 @@ Section NumberRealizability.
 
 Section RealizingAxioms.
 
-(* Axioms of HA are realizable *)
 
   Lemma realizes_ax_refl (α : env nat) : exists e, e ⊩[α] ax_refl.
   Proof.
@@ -308,6 +308,8 @@ Section RealizingAxioms.
 
 
 End RealizingAxioms.
+
+(** ** Encoding Intuitionistic Robinson Arithmetic *)
 
 Section EncodeQeq.
 

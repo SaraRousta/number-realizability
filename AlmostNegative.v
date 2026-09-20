@@ -11,6 +11,7 @@ Import ListNotations.
 
 From NumberRealizability Require Import LogicalFacts Core Facts RealizingEnvTerms BoundedTactics.
 
+(** * Almost-Negative Formulas *)
 
 Section AlmostNegative.
   Variable Part : partiality.
@@ -33,8 +34,7 @@ Section AlmostNegative.
     (realizes_env n code α)
     (at level 70, format "code  ⊩env[ n ]  α").
 
-(* Almost negative *)
-
+(** ** Definition of Almost Negative Formulas *)
 
 Inductive almost_negative : form -> Prop := 
 | an_bot : almost_negative ⊥
@@ -44,6 +44,7 @@ Inductive almost_negative : form -> Prop :=
 | an_impl (φ ψ : form) : almost_negative φ -> almost_negative ψ -> almost_negative  (bin Impl φ ψ)
 | an_all (φ : form) : almost_negative φ -> almost_negative (∀ φ).
 
+(** ** Self-realizability *)
 
 Proposition realizable_anforms_true (φ : form) (Han : almost_negative φ) (n : nat) (Hbd : bounded n φ) : 
   forall (α : env nat) code_α, code_α ⊩env[n] α ->

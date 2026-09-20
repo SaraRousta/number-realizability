@@ -9,6 +9,8 @@ Import ListNotations.
 
 From NumberRealizability Require Import LogicalFacts Core Facts RealizingEnvTerms BoundedTactics.
 
+(** * Soundness for Intuitionistic Natural Deduction in the Language of Arithmetic *)
+
 Section NumberRealizability.
   Variable Part : partiality.
   Variable θ : nat -> nat ↛ nat.
@@ -30,11 +32,12 @@ Section NumberRealizability.
     (realizes_env n code α)
     (at level 70, format "code  ⊩env[ n ]  α").
 
+(** ** Soundness *)
+
 Section Soundness.
 
 (** Soundness *)
 
-(* The function we write (epf (--)) informs us about the shape of the proof *)
 
 Lemma realizes_sound_ND {f : falsity_flag} (Γ : list form) (φ : form) (n : nat) : 
     bounded_L n (φ :: Γ) ->
@@ -501,6 +504,8 @@ Proof.
 Qed.
 
 End Soundness.
+
+(** ** Consistency *)
 
 Section Consistency.
 

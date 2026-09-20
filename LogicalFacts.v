@@ -1,5 +1,7 @@
 From SyntheticComputability Require Import Definitions.
 
+(** * Logical Principles and Equivalences *)
+
 Lemma ex_P_and_False (A : Type) (P : A -> Prop) :
   (exists x, P x /\ False) <-> False.
 Proof.
@@ -20,7 +22,7 @@ Definition MP_bool :=
   forall (f : nat -> bool), 
     (~~ exists n, f n = true) -> exists n, f n = true.
 
-Definition MP_Prop := 
+Definition MP_decidable := 
   forall (P : nat -> Prop), 
     (decidable P) -> 
       (~~ exists n : nat, P n) -> exists n : nat, P n.

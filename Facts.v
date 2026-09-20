@@ -11,6 +11,10 @@ Import ListNotations.
 
 From NumberRealizability Require Import LogicalFacts Core.
 
+(** * Facts about Number Realizability *)
+
+(** ** Evaluation: Substitution and Extensionality *)
+
 Section Eval.
 
 Lemma eval_subst (α : env nat) (t : term) (ρ : nat -> term) :
@@ -99,6 +103,8 @@ Section NumberRealizability.
   Local Notation "c ⊩ctx Γ" :=
     (realizes_ctx (Part := Part) θ (fun _ => 0) c Γ)
     (at level 70).
+
+(** ** Realizability: Substitution and Extensionality *)
 
 Section Real.
 
@@ -295,6 +301,8 @@ Qed.
 
 End Real.
 
+(** ** Contexts: Substitution and Extensionality *)
+
 Section Ctx.
 
 Lemma env_extend_ext (α α' : env nat) (c : nat) :
@@ -357,6 +365,8 @@ Qed.
 
 End Ctx.
 
+(** ** Simple Properties of Realizability *)
+
 Section RealizabilityFacts.
 
 Lemma realizes_neg_iff (φ : form) (α : env nat): 
@@ -404,8 +414,9 @@ Qed.
 
 End RealizabilityFacts.
 
-Section ClosedForms.
+(** ** Environment Independence of Closed Formulas *)
 
+Section ClosedForms.
 
 Lemma sat_closed {f : falsity_flag} (φ : form) (α : env nat) : 
   bounded 0 φ -> forall ρ, sat interp_nat α φ <-> sat interp_nat α φ[ρ].

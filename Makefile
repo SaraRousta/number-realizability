@@ -11,6 +11,12 @@ clean: $(COQMAKEFILE)
 $(COQMAKEFILE): _CoqProject
 	rocq makefile -f _CoqProject -o $(COQMAKEFILE)
 
+COQDOCFLAGS := \
+  --toc --toc-depth 3 --html --interpolate --short \
+  --index indexpage --no-lib-name --parse-comments \
+  --with-header coqdocjs/extra/header.html \
+  --with-footer coqdocjs/extra/footer.html
+
 include coqdocjs/Makefile.doc
 
 html: coqdoc

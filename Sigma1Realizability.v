@@ -11,6 +11,7 @@ Import ListNotations.
 From FOL.Incompleteness Require Import qdec sigma1.
 From NumberRealizability Require Import Core Facts RealizingEnvTerms BoundedTactics Soundness RealizingArithmetic.
 
+(** * Σ₁-properties *)
 
 Section Sigma1.
   Variable Part : partiality.
@@ -35,6 +36,8 @@ Section Sigma1.
 
   Existing Instance PA_preds_signature.
   Existing Instance PA_funcs_signature.
+
+(** ** Realizable Σ₁-formulas are True *)
 
 Lemma real_sig1_true (φ : form) (α : env nat) (n code_α : nat)
   (Henv : code_α ⊩env[n] α):
@@ -92,6 +95,8 @@ Proof.
   eapply zero_realizes_triv_env.
 Qed.
 
+(** ** Σ₁-completeness for Realizable Formulas *)
+
 Theorem real_Σ1_completeness (φ : form) : Σ1 φ -> bounded 0 φ -> forall c, c ⊩ φ -> Qeq ⊢I φ.
 Proof.
   intros Hsig Hbd c Hreal.
@@ -99,6 +104,8 @@ Proof.
   apply real_closed_sig1_true in Hreal; try assumption.
   intros α. apply sat_closed_env_gen with (α := α) in Hreal; assumption.
 Qed.
+
+(** ** Σ₁-witness *)
 
 Lemma real_Σ1_witness (φ : form) : Σ1 φ -> bounded 1 φ -> Qeq ⊢I ∃φ -> exists x, Qeq ⊢I φ[(num x)..].
 Proof.

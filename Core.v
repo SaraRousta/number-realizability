@@ -9,6 +9,8 @@ Import VectorNotations.
 From Stdlib Require Import List.
 Import ListNotations.
 
+(** * Definition of Number Realizability *)
+
 Equations eval (α : env nat) (t : @term PA_funcs_signature) : nat :=
   eval α (var x) := α x ;
   eval α (func Zero _) := 0 ;

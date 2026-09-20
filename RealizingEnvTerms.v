@@ -11,6 +11,8 @@ Import ListNotations.
 
 From NumberRealizability Require Import Core Facts.
 
+(** * Definition of Number Realizability *)
+
 Section NumberRealizability.
 
   Variable Part : partiality.
@@ -18,7 +20,8 @@ Section NumberRealizability.
   Variable epf : EPF_nonparam_for θ.
   Variable epf_param : EPF_for θ.
 
-(** Realizing environments *)
+
+(** ** Definition of Number Realizability *)
 
 Definition realizes_env n code_α α :=
   code_α = fold_right (fun a b => embed (a, b)) 0 (map α (seq 0 n))
@@ -198,10 +201,9 @@ Proof.
   rewrite embedP. reflexivity.
 Qed. 
 
-
-(** Realizing terms *)
-
 End EnvironmentRealizability.
+
+(** ** Realizing Terms *)
 
 Section TermRealizability.
 

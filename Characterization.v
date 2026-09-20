@@ -11,6 +11,7 @@ Import ListNotations.
 
 From NumberRealizability Require Import LogicalFacts Core Facts RealizingEnvTerms AlmostNegative.
 
+(** * Characterization of Number Realizability *)
 
 Section NumberRealizability.
   Variable Part : partiality.
@@ -36,9 +37,7 @@ Section NumberRealizability.
 
 Section AlmostNegative.
 
-(* Characterization *)
-
-
+(** ** Almost-Negative Predicates *)
 
   Inductive AN_pred : forall X, (X -> Prop) -> Prop := 
   | AN_semi_dec {X} (P : X -> Prop) : semi_decidable P -> AN_pred P
@@ -47,6 +46,8 @@ Section AlmostNegative.
   | AN_forall {X Y} (P : Y -> X -> Prop) : (forall y, AN_pred (fun x => P y x)) -> AN_pred (fun x => forall y, P y x).
 
 End AlmostNegative.
+
+(** ** Semidecidability and Pairing *)
 
 Section ComputabilityFacts.
 
@@ -170,6 +171,8 @@ Section ComputabilityFacts.
   Qed.
 
 End ComputabilityFacts.
+
+(** ** The Auxiliary Predicate R *)
 
 Section RealizabilityPredicate.
 
@@ -325,6 +328,8 @@ Section RealizabilityPredicate.
   Qed.
 
 End RealizabilityPredicate.
+
+(** ** The Characterization Theorem *)
 
 Section Characterization.
 

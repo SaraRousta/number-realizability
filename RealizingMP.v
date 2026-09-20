@@ -3,14 +3,14 @@ From Stdlib Require Import Arith.
 From Equations Require Import Equations.
 From FOL Require Import FullSyntax Arithmetics.
 
-
 Import EmbedNatNotations.
-
 
 From Stdlib Require Import List.
 Import ListNotations.
 
 From NumberRealizability Require Import LogicalFacts Core Facts.
+
+(** * Realizing Markov's Principle *)
 
 
 Section RealizingMP.
@@ -31,10 +31,12 @@ Section RealizingMP.
     (realizes_ctx (Part := Part) θ (fun _ => 0) c Γ)
     (at level 70).
 
-(* Markov's principle *)
+(** ** Markov's principle for HA *)
 
 Definition MP_Prop_HA (φ : form) : form :=
   (∀ (φ ∨ ¬φ)) → (¬¬(∃ φ)) → ∃ φ.
+
+(** ** Total partial functions are total *)
 
 Section PartialityFacts.
 
@@ -75,6 +77,8 @@ Proof.
 Qed.
 
 End PartialityFacts.
+
+(** ** Realizer for Markov's Principle *)
 
 Lemma HA_dec_imp_dec_ex_real (φ : form) (d: nat) (α : env nat): 
   d ⊩[α] (∀ (φ ∨ ¬φ)) ->
@@ -184,7 +188,7 @@ Proof.
 Qed.
 
 
-(* DNE and MP_HA *)
+(** *** From DNE *)
 
 Lemma DNE_imp_real_ex (φ : form) (e d : nat) : 
   DNE -> 
@@ -228,6 +232,7 @@ Proof.
   eapply mu_ter_imp_MP_HA; eassumption.
 Qed.
 
+(** *** From MP_bool *)
 
 Lemma MP_bool_imp_real_ex (φ : form) (α : env nat) (e d : nat) : 
   MP_bool -> 
@@ -278,9 +283,10 @@ Proof.
   eapply mu_ter_imp_MP_HA; eassumption.
 Qed.
 
+(** *** From MP_decidable *)
 
-Lemma MP_Prop_imp_real_ex (φ : form) (e d : nat) : 
-  MP_Prop -> 
+Lemma MP_decidable_imp_real_ex (φ : form) (e d : nat) : 
+  MP_decidable -> 
   d ⊩ ∀ φ ∨ (¬ φ) ->
   e ⊩ ¬ (¬ (∃ φ)) ->
   exists m, m ⊩ ∃ φ.
@@ -296,8 +302,8 @@ Proof.
 Qed.
 
 
-Lemma MP_Prop_realizes_MP (φ : form):
-  MP_Prop ->
+Lemma MP_decidable_realizes_MP (φ : form):
+  MP_decidable ->
   bounded 1 φ -> 
   exists c, c ⊩ (MP_Prop_HA φ).
 Proof.
@@ -313,7 +319,7 @@ Proof.
   intros e Hedn.
 
   assert (Hexm : exists m : nat, m ⊩ (∃ φ)).
-  { eapply MP_Prop_imp_real_ex; eassumption. }
+  { eapply MP_decidable_imp_real_ex; eassumption. }
 
   destruct Hexm as [m Hexm].
   

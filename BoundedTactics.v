@@ -12,9 +12,11 @@ Import ListNotations.
 
 From NumberRealizability Require Import Core Facts.
 
+(** * Boundedness Lemmas and Tactics *)
+
+(** ** Boundedness Lemmas *)
 
 Section BoundedFacts.
-
 
 Lemma bounded_L_cons {f : falsity_flag} n (φ : form) (Γ : list form) :
   bounded_L n (φ :: Γ) <-> bounded n φ /\ bounded_L n Γ.
@@ -54,6 +56,7 @@ Qed.
 
 End BoundedFacts.
 
+(** ** Boundedness Tactics *)
 
 Ltac decompose_bounded :=
   match goal with

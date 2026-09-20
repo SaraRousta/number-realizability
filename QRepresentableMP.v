@@ -9,6 +9,7 @@ Import ListNotations.
 From FOL.Incompleteness Require Import qdec sigma1.
 From NumberRealizability Require Import LogicalFacts Core Facts RealizingEnvTerms BoundedTactics Soundness RealizingArithmetic RealizingMP Sigma1Realizability.
 
+(** * Markov's Principle for Q-Representable Predicates *)
 
 Section QreprMP.
   Variable Part : partiality.
@@ -34,9 +35,13 @@ Section QreprMP.
   Existing Instance PA_preds_signature.
   Existing Instance PA_funcs_signature.
 
+(** ** Q-representability and MP_Q *)
+
 Definition Q_repr (P : nat -> Prop) := exists φ, bounded 1 φ /\ Σ1 φ /\ forall x, P x <-> Qeq ⊢I φ[(num x)..].
 
 Definition MP_Q (P : nat -> Prop) := Q_repr P -> decidable P -> (~~ exists n, P n) -> exists n, P n.
+
+(** ** Realizability of MP_HA forces MP_Q *)
 
 Lemma Pdec_imp_Fdec (P : nat -> Prop) : 
   AC_nat -> 
