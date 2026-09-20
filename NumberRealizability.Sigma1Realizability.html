@@ -25,8 +25,6 @@
 </div>
     <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
     <div id="main">
-<h1 class="libtitle">NumberRealizability.Sigma1Realizability</h1>
-
 <div class="code">
 <span class="id" title="keyword">From</span> <span class="id" title="var">SyntheticComputability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">EPF</span> <span class="id" title="library">partial</span> <span class="id" title="library">equiv_on</span> <span class="id" title="library">Definitions</span> <span class="id" title="library">reductions</span> <span class="id" title="library">embed_nat</span>.<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">Stdlib</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">Lia</span>.<br/>
@@ -43,6 +41,15 @@
 <br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">FOL.Incompleteness</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">qdec</span> <span class="id" title="library">sigma1</span>.<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">NumberRealizability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="NumberRealizability.Core.html#"><span class="id" title="library">Core</span></a> <a class="idref" href="NumberRealizability.Facts.html#"><span class="id" title="library">Facts</span></a> <a class="idref" href="NumberRealizability.RealizingEnvTerms.html#"><span class="id" title="library">RealizingEnvTerms</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#"><span class="id" title="library">BoundedTactics</span></a> <a class="idref" href="NumberRealizability.Soundness.html#"><span class="id" title="library">Soundness</span></a> <a class="idref" href="NumberRealizability.RealizingArithmetic.html#"><span class="id" title="library">RealizingArithmetic</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab30"></a><h1 class="section">Σ₁-properties</h1>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="Sigma1" class="idref" href="#Sigma1"><span class="id" title="section">Sigma1</span></a>.<br/>
@@ -69,6 +76,15 @@
 <br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Existing Instance</span> <span class="id" title="instance">PA_preds_signature</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Existing Instance</span> <span class="id" title="instance">PA_funcs_signature</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab31"></a><h2 class="section">Realizable Σ₁-formulas are True</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="real_sig1_true" class="idref" href="#real_sig1_true"><span class="id" title="lemma">real_sig1_true</span></a> (<a id="d0ef999d5cf1ae64cfccc412cd27a7cb" class="idref" href="#d0ef999d5cf1ae64cfccc412cd27a7cb"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>) (<a id="01214f440e1ebbf02585b4d6c7d6f861" class="idref" href="#01214f440e1ebbf02585b4d6c7d6f861"><span class="id" title="binder">α</span></a> : <span class="id" title="definition">env</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>) (<a id="n:11" class="idref" href="#n:11"><span class="id" title="binder">n</span></a> <a id="ab5bcb08624bc68fac684ec17bfbb7a2" class="idref" href="#ab5bcb08624bc68fac684ec17bfbb7a2"><span class="id" title="binder">code_α</span></a> : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>)<br/>
@@ -128,6 +144,15 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
+</div>
+
+<div class="doc">
+<a id="lab32"></a><h2 class="section">Σ₁-completeness for Realizable Formulas</h2>
+
+</div>
+<div class="code">
+
+<br/>
 <span class="id" title="keyword">Theorem</span> <a id="5315353d0c6971b41838e3fe48a58451" class="idref" href="#5315353d0c6971b41838e3fe48a58451"><span class="id" title="lemma">real_Σ1_completeness</span></a> (<a id="121d2b861d49b1fcee040f9bfb948b0a" class="idref" href="#121d2b861d49b1fcee040f9bfb948b0a"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>) : <span class="id" title="inductive">Σ1</span> <a class="idref" href="NumberRealizability.Sigma1Realizability.html#121d2b861d49b1fcee040f9bfb948b0a"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="inductive">bounded</span> 0 <a class="idref" href="NumberRealizability.Sigma1Realizability.html#121d2b861d49b1fcee040f9bfb948b0a"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="keyword">forall</span> <a id="c:28" class="idref" href="#c:28"><span class="id" title="binder">c</span></a>, <a class="idref" href="NumberRealizability.Sigma1Realizability.html#c:28"><span class="id" title="variable">c</span></a> <a class="idref" href="NumberRealizability.Sigma1Realizability.html#2538206e52134bb96ed7e7c0060f0783"><span class="id" title="notation">⊩</span></a> <a class="idref" href="NumberRealizability.Sigma1Realizability.html#121d2b861d49b1fcee040f9bfb948b0a"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="definition">Qeq</span> <span class="id" title="notation">⊢</span><span class="id" title="notation">I</span> <a class="idref" href="NumberRealizability.Sigma1Realizability.html#121d2b861d49b1fcee040f9bfb948b0a"><span class="id" title="variable">φ</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">Hsig</span> <span class="id" title="var">Hbd</span> <span class="id" title="var">c</span> <span class="id" title="var">Hreal</span>.<br/>
@@ -135,6 +160,15 @@
 &nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="NumberRealizability.Sigma1Realizability.html#real_closed_sig1_true"><span class="id" title="lemma">real_closed_sig1_true</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">Hreal</span>; <span class="id" title="tactic">try</span> <span class="id" title="tactic">assumption</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">α</span>. <span class="id" title="tactic">apply</span> <a class="idref" href="NumberRealizability.Facts.html#sat_closed_env_gen"><span class="id" title="lemma">sat_closed_env_gen</span></a> <span class="id" title="keyword">with</span> (<span class="id" title="var">α</span> := <span class="id" title="var">α</span>) <span class="id" title="tactic">in</span> <span class="id" title="var">Hreal</span>; <span class="id" title="tactic">assumption</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab33"></a><h2 class="section">Σ₁-witness</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="3d664b03db449a8887a3b50612d469c0" class="idref" href="#3d664b03db449a8887a3b50612d469c0"><span class="id" title="lemma">real_Σ1_witness</span></a> (<a id="25dbd6aa491e5149679c6579fb0ae954" class="idref" href="#25dbd6aa491e5149679c6579fb0ae954"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>) : <span class="id" title="inductive">Σ1</span> <a class="idref" href="NumberRealizability.Sigma1Realizability.html#25dbd6aa491e5149679c6579fb0ae954"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="inductive">bounded</span> 1 <a class="idref" href="NumberRealizability.Sigma1Realizability.html#25dbd6aa491e5149679c6579fb0ae954"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="definition">Qeq</span> <span class="id" title="notation">⊢</span><span class="id" title="notation">I</span> <span class="id" title="notation">∃</span><a class="idref" href="NumberRealizability.Sigma1Realizability.html#25dbd6aa491e5149679c6579fb0ae954"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">exists</span></a> <a id="x:30" class="idref" href="#x:30"><span class="id" title="binder">x</span></a><a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">,</span></a> <span class="id" title="definition">Qeq</span> <span class="id" title="notation">⊢</span><span class="id" title="notation">I</span> <a class="idref" href="NumberRealizability.Sigma1Realizability.html#25dbd6aa491e5149679c6579fb0ae954"><span class="id" title="variable">φ</span></a><span class="id" title="notation">[</span><span class="id" title="notation">(</span><span class="id" title="definition">num</span> <a class="idref" href="NumberRealizability.Sigma1Realizability.html#x:30"><span class="id" title="variable">x</span></a><span class="id" title="notation">)</span>..<span class="id" title="notation">]</span>.<br/>

@@ -25,8 +25,6 @@
 </div>
     <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
     <div id="main">
-<h1 class="libtitle">NumberRealizability.Characterization</h1>
-
 <div class="code">
 <span class="id" title="keyword">From</span> <span class="id" title="var">SyntheticComputability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">EPF</span> <span class="id" title="library">partial</span> <span class="id" title="library">equiv_on</span> <span class="id" title="library">Definitions</span> <span class="id" title="library">reductions</span> <span class="id" title="library">embed_nat</span>.<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">Stdlib</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">Vector</span>.<br/>
@@ -43,6 +41,15 @@
 
 <br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">NumberRealizability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="NumberRealizability.LogicalFacts.html#"><span class="id" title="library">LogicalFacts</span></a> <a class="idref" href="NumberRealizability.Core.html#"><span class="id" title="library">Core</span></a> <a class="idref" href="NumberRealizability.Facts.html#"><span class="id" title="library">Facts</span></a> <a class="idref" href="NumberRealizability.RealizingEnvTerms.html#"><span class="id" title="library">RealizingEnvTerms</span></a> <a class="idref" href="NumberRealizability.AlmostNegative.html#"><span class="id" title="library">AlmostNegative</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab37"></a><h1 class="section">Characterization of Number Realizability</h1>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="NumberRealizability" class="idref" href="#NumberRealizability"><span class="id" title="section">NumberRealizability</span></a>.<br/>
@@ -72,7 +79,13 @@
 <span class="id" title="keyword">Section</span> <a id="NumberRealizability.AlmostNegative" class="idref" href="#NumberRealizability.AlmostNegative"><span class="id" title="section">AlmostNegative</span></a>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;Characterization&nbsp;*)</span><br/>
+</div>
+
+<div class="doc">
+<a id="lab38"></a><h2 class="section">Almost-Negative Predicates</h2>
+
+</div>
+<div class="code">
 
 <br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Inductive</span> <a id="AN_pred" class="idref" href="#AN_pred"><span class="id" title="definition, inductive"><span id="AN_pred_ind" class="id"><span id="AN_pred_sind" class="id">AN_pred</span></span></span></a> : <span class="id" title="keyword">forall</span> <a id="X:9" class="idref" href="#X:9"><span class="id" title="binder">X</span></a>, <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">(</span></a><a class="idref" href="NumberRealizability.Characterization.html#X:9"><span class="id" title="variable">X</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="keyword">Prop</span><a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">)</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="keyword">Prop</span> := <br/>
@@ -83,6 +96,15 @@
 
 <br/>
 <span class="id" title="keyword">End</span> <a class="idref" href="NumberRealizability.Characterization.html#NumberRealizability.AlmostNegative"><span class="id" title="section">AlmostNegative</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab39"></a><h2 class="section">Semidecidability and Pairing</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="NumberRealizability.ComputabilityFacts" class="idref" href="#NumberRealizability.ComputabilityFacts"><span class="id" title="section">ComputabilityFacts</span></a>.<br/>
@@ -220,6 +242,15 @@
 
 <br/>
 <span class="id" title="keyword">End</span> <a class="idref" href="NumberRealizability.Characterization.html#NumberRealizability.ComputabilityFacts"><span class="id" title="section">ComputabilityFacts</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab40"></a><h2 class="section">The Auxiliary Predicate R</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="NumberRealizability.RealizabilityPredicate" class="idref" href="#NumberRealizability.RealizabilityPredicate"><span class="id" title="section">RealizabilityPredicate</span></a>.<br/>
@@ -383,6 +414,15 @@
 
 <br/>
 <span class="id" title="keyword">End</span> <a class="idref" href="NumberRealizability.Characterization.html#NumberRealizability.RealizabilityPredicate"><span class="id" title="section">RealizabilityPredicate</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab41"></a><h2 class="section">The Characterization Theorem</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="NumberRealizability.Characterization" class="idref" href="#NumberRealizability.Characterization"><span class="id" title="section">Characterization</span></a>.<br/>

@@ -25,8 +25,6 @@
 </div>
     <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
     <div id="main">
-<h1 class="libtitle">NumberRealizability.BoundedTactics</h1>
-
 <div class="code">
 <span class="id" title="keyword">From</span> <span class="id" title="var">SyntheticComputability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">EPF</span> <span class="id" title="library">partial</span> <span class="id" title="library">equiv_on</span> <span class="id" title="library">Definitions</span> <span class="id" title="library">reductions</span> <span class="id" title="library">embed_nat</span>.<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">Stdlib</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">Lia</span> <span class="id" title="library">Arith</span> <span class="id" title="library">Vector</span>.<br/>
@@ -44,6 +42,19 @@
 
 <br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">NumberRealizability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="NumberRealizability.Core.html#"><span class="id" title="library">Core</span></a> <a class="idref" href="NumberRealizability.Facts.html#"><span class="id" title="library">Facts</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab12"></a><h1 class="section">Boundedness Lemmas and Tactics</h1>
+
+<div class="paragraph"> </div>
+
+<a id="lab13"></a><h2 class="section">Boundedness Lemmas</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="BoundedFacts" class="idref" href="#BoundedFacts"><span class="id" title="section">BoundedFacts</span></a>.<br/>
@@ -91,6 +102,15 @@
 
 <br/>
 <span class="id" title="keyword">End</span> <a class="idref" href="NumberRealizability.BoundedTactics.html#BoundedFacts"><span class="id" title="section">BoundedFacts</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab14"></a><h2 class="section">Boundedness Tactics</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Ltac</span> <span class="id" title="var">decompose_bounded</span> :=<br/>

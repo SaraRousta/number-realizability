@@ -25,8 +25,6 @@
 </div>
     <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
     <div id="main">
-<h1 class="libtitle">NumberRealizability.RealizingArithmetic</h1>
-
 <div class="code">
 <span class="id" title="keyword">From</span> <span class="id" title="var">SyntheticComputability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">EPF</span> <span class="id" title="library">partial</span> <span class="id" title="library">equiv_on</span> <span class="id" title="library">Definitions</span> <span class="id" title="library">reductions</span> <span class="id" title="library">embed_nat</span>.<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">Stdlib</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">Vector</span>.<br/>
@@ -42,6 +40,15 @@
 
 <br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">NumberRealizability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="NumberRealizability.Core.html#"><span class="id" title="library">Core</span></a> <a class="idref" href="NumberRealizability.Facts.html#"><span class="id" title="library">Facts</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#"><span class="id" title="library">BoundedTactics</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab18"></a><h1 class="section">Realizing the Axioms of Arithmetic</h1>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="NumberRealizability" class="idref" href="#NumberRealizability"><span class="id" title="section">NumberRealizability</span></a>.<br/>
@@ -78,9 +85,6 @@
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="NumberRealizability.RealizingAxioms" class="idref" href="#NumberRealizability.RealizingAxioms"><span class="id" title="section">RealizingAxioms</span></a>.<br/>
-
-<br/>
-<span class="comment">(*&nbsp;Axioms&nbsp;of&nbsp;HA&nbsp;are&nbsp;realizable&nbsp;*)</span><br/>
 
 <br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="realizes_ax_refl" class="idref" href="#realizes_ax_refl"><span class="id" title="lemma">realizes_ax_refl</span></a> (<a id="28f99dcc928d04043aa00c6d63ae3266" class="idref" href="#28f99dcc928d04043aa00c6d63ae3266"><span class="id" title="binder">α</span></a> : <span class="id" title="definition">env</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>) : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">exists</span></a> <a id="e:10" class="idref" href="#e:10"><span class="id" title="binder">e</span></a><a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">,</span></a> <a class="idref" href="NumberRealizability.RealizingArithmetic.html#e:10"><span class="id" title="variable">e</span></a> <a class="idref" href="NumberRealizability.RealizingArithmetic.html#6f817f7bd55ede742b2716f3637cb3a1"><span class="id" title="notation">⊩[</span></a><a class="idref" href="NumberRealizability.RealizingArithmetic.html#28f99dcc928d04043aa00c6d63ae3266"><span class="id" title="variable">α</span></a><a class="idref" href="NumberRealizability.RealizingArithmetic.html#6f817f7bd55ede742b2716f3637cb3a1"><span class="id" title="notation">]</span></a> <span class="id" title="definition">ax_refl</span>.<br/>
@@ -359,6 +363,15 @@
 
 <br/>
 <span class="id" title="keyword">End</span> <a class="idref" href="NumberRealizability.RealizingArithmetic.html#NumberRealizability.RealizingAxioms"><span class="id" title="section">RealizingAxioms</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab19"></a><h2 class="section">Encoding Intuitionistic Robinson Arithmetic</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="NumberRealizability.EncodeQeq" class="idref" href="#NumberRealizability.EncodeQeq"><span class="id" title="section">EncodeQeq</span></a>.<br/>

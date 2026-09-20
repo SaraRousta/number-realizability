@@ -25,8 +25,6 @@
 </div>
     <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
     <div id="main">
-<h1 class="libtitle">NumberRealizability.RealizingMP</h1>
-
 <div class="code">
 <span class="id" title="keyword">From</span> <span class="id" title="var">SyntheticComputability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">EPF</span> <span class="id" title="library">partial</span> <span class="id" title="library">equiv_on</span> <span class="id" title="library">Definitions</span> <span class="id" title="library">reductions</span> <span class="id" title="library">embed_nat</span>.<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">Stdlib</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">Arith</span>.<br/>
@@ -42,6 +40,15 @@
 
 <br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">NumberRealizability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="NumberRealizability.LogicalFacts.html#"><span class="id" title="library">LogicalFacts</span></a> <a class="idref" href="NumberRealizability.Core.html#"><span class="id" title="library">Core</span></a> <a class="idref" href="NumberRealizability.Facts.html#"><span class="id" title="library">Facts</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab20"></a><h1 class="section">Realizing Markov's Principle</h1>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="RealizingMP" class="idref" href="#RealizingMP"><span class="id" title="section">RealizingMP</span></a>.<br/>
@@ -63,11 +70,26 @@
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 70).<br/>
 
 <br/>
-<span class="comment">(*&nbsp;Markov's&nbsp;principle&nbsp;*)</span><br/>
+</div>
+
+<div class="doc">
+<a id="lab21"></a><h2 class="section">Markov's principle for HA</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Definition</span> <a id="MP_Prop_HA" class="idref" href="#MP_Prop_HA"><span class="id" title="definition">MP_Prop_HA</span></a> (<a id="d0ef999d5cf1ae64cfccc412cd27a7cb" class="idref" href="#d0ef999d5cf1ae64cfccc412cd27a7cb"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>) : <span class="id" title="inductive">form</span> :=<br/>
 &nbsp;&nbsp;<span class="id" title="notation">(</span><span class="id" title="notation">∀</span> <span class="id" title="notation">(</span><a class="idref" href="NumberRealizability.RealizingMP.html#d0ef999d5cf1ae64cfccc412cd27a7cb"><span class="id" title="variable">φ</span></a> <span class="id" title="notation">∨</span> <span class="id" title="notation">¬</span><a class="idref" href="NumberRealizability.RealizingMP.html#d0ef999d5cf1ae64cfccc412cd27a7cb"><span class="id" title="variable">φ</span></a><span class="id" title="notation">)</span><span class="id" title="notation">)</span> <span class="id" title="notation">→</span> <span class="id" title="notation">(</span><span class="id" title="notation">¬¬(</span><span class="id" title="notation">∃</span> <a class="idref" href="NumberRealizability.RealizingMP.html#d0ef999d5cf1ae64cfccc412cd27a7cb"><span class="id" title="variable">φ</span></a><span class="id" title="notation">)</span><span class="id" title="notation">)</span> <span class="id" title="notation">→</span> <span class="id" title="notation">∃</span> <a class="idref" href="NumberRealizability.RealizingMP.html#d0ef999d5cf1ae64cfccc412cd27a7cb"><span class="id" title="variable">φ</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab22"></a><h2 class="section">Total partial functions are total</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="RealizingMP.PartialityFacts" class="idref" href="#RealizingMP.PartialityFacts"><span class="id" title="section">PartialityFacts</span></a>.<br/>
@@ -112,6 +134,15 @@
 
 <br/>
 <span class="id" title="keyword">End</span> <a class="idref" href="NumberRealizability.RealizingMP.html#RealizingMP.PartialityFacts"><span class="id" title="section">PartialityFacts</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab23"></a><h2 class="section">Realizer for Markov's Principle</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="HA_dec_imp_dec_ex_real" class="idref" href="#HA_dec_imp_dec_ex_real"><span class="id" title="lemma">HA_dec_imp_dec_ex_real</span></a> (<a id="7232aa770a8277aafc66777e1f8de7ed" class="idref" href="#7232aa770a8277aafc66777e1f8de7ed"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>) (<a id="d:24" class="idref" href="#d:24"><span class="id" title="binder">d</span></a>: <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>) (<a id="6fb522096358674dd209e6ac77f89539" class="idref" href="#6fb522096358674dd209e6ac77f89539"><span class="id" title="binder">α</span></a> : <span class="id" title="definition">env</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>): <br/>
@@ -223,7 +254,13 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;DNE&nbsp;and&nbsp;MP_HA&nbsp;*)</span><br/>
+</div>
+
+<div class="doc">
+<a id="lab24"></a><h3 class="section">From DNE</h3>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="DNE_imp_real_ex" class="idref" href="#DNE_imp_real_ex"><span class="id" title="lemma">DNE_imp_real_ex</span></a> (<a id="446d542474945d9a4049ff0cab088f3f" class="idref" href="#446d542474945d9a4049ff0cab088f3f"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>) (<a id="e:58" class="idref" href="#e:58"><span class="id" title="binder">e</span></a> <a id="d:59" class="idref" href="#d:59"><span class="id" title="binder">d</span></a> : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>) : <br/>
@@ -273,6 +310,15 @@
 <br/>
 &nbsp;&nbsp;<span class="id" title="tactic">eapply</span> <a class="idref" href="NumberRealizability.RealizingMP.html#mu_ter_imp_MP_HA"><span class="id" title="lemma">mu_ter_imp_MP_HA</span></a>; <span class="id" title="var">eassumption</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab25"></a><h3 class="section">From MP_bool</h3>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="MP_bool_imp_real_ex" class="idref" href="#MP_bool_imp_real_ex"><span class="id" title="lemma">MP_bool_imp_real_ex</span></a> (<a id="76cc59604fc041fa855c5f8ca662099f" class="idref" href="#76cc59604fc041fa855c5f8ca662099f"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>) (<a id="49b2c70ee915af91c95102abce419364" class="idref" href="#49b2c70ee915af91c95102abce419364"><span class="id" title="binder">α</span></a> : <span class="id" title="definition">env</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>) (<a id="e:77" class="idref" href="#e:77"><span class="id" title="binder">e</span></a> <a id="d:78" class="idref" href="#d:78"><span class="id" title="binder">d</span></a> : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>) : <br/>
@@ -331,8 +377,17 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Lemma</span> <a id="MP_Prop_imp_real_ex" class="idref" href="#MP_Prop_imp_real_ex"><span class="id" title="lemma">MP_Prop_imp_real_ex</span></a> (<a id="0f41ae37b5f2f6e148691ddf84146087" class="idref" href="#0f41ae37b5f2f6e148691ddf84146087"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>) (<a id="e:96" class="idref" href="#e:96"><span class="id" title="binder">e</span></a> <a id="d:97" class="idref" href="#d:97"><span class="id" title="binder">d</span></a> : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>) : <br/>
-&nbsp;&nbsp;<a class="idref" href="NumberRealizability.LogicalFacts.html#MP_Prop"><span class="id" title="definition">MP_Prop</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <br/>
+</div>
+
+<div class="doc">
+<a id="lab26"></a><h3 class="section">From MP_decidable</h3>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="MP_decidable_imp_real_ex" class="idref" href="#MP_decidable_imp_real_ex"><span class="id" title="lemma">MP_decidable_imp_real_ex</span></a> (<a id="0f41ae37b5f2f6e148691ddf84146087" class="idref" href="#0f41ae37b5f2f6e148691ddf84146087"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>) (<a id="e:96" class="idref" href="#e:96"><span class="id" title="binder">e</span></a> <a id="d:97" class="idref" href="#d:97"><span class="id" title="binder">d</span></a> : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>) : <br/>
+&nbsp;&nbsp;<a class="idref" href="NumberRealizability.LogicalFacts.html#MP_decidable"><span class="id" title="definition">MP_decidable</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <br/>
 &nbsp;&nbsp;<a class="idref" href="NumberRealizability.RealizingMP.html#d:97"><span class="id" title="variable">d</span></a> <a class="idref" href="NumberRealizability.RealizingMP.html#dfc5094f64f61d8da8a05561fb68887f"><span class="id" title="notation">⊩</span></a> <span class="id" title="notation">∀</span> <a class="idref" href="NumberRealizability.RealizingMP.html#0f41ae37b5f2f6e148691ddf84146087"><span class="id" title="variable">φ</span></a> <span class="id" title="notation">∨</span> <span class="id" title="notation">(</span><span class="id" title="notation">¬</span> <a class="idref" href="NumberRealizability.RealizingMP.html#0f41ae37b5f2f6e148691ddf84146087"><span class="id" title="variable">φ</span></a><span class="id" title="notation">)</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a><br/>
 &nbsp;&nbsp;<a class="idref" href="NumberRealizability.RealizingMP.html#e:96"><span class="id" title="variable">e</span></a> <a class="idref" href="NumberRealizability.RealizingMP.html#dfc5094f64f61d8da8a05561fb68887f"><span class="id" title="notation">⊩</span></a> <span class="id" title="notation">¬</span> <span class="id" title="notation">(¬</span> <span class="id" title="notation">(</span><span class="id" title="notation">∃</span> <a class="idref" href="NumberRealizability.RealizingMP.html#0f41ae37b5f2f6e148691ddf84146087"><span class="id" title="variable">φ</span></a><span class="id" title="notation">))</span> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a><br/>
 &nbsp;&nbsp;<a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">exists</span></a> <a id="m:98" class="idref" href="#m:98"><span class="id" title="binder">m</span></a><a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">,</span></a> <a class="idref" href="NumberRealizability.RealizingMP.html#m:98"><span class="id" title="variable">m</span></a> <a class="idref" href="NumberRealizability.RealizingMP.html#dfc5094f64f61d8da8a05561fb68887f"><span class="id" title="notation">⊩</span></a> <span class="id" title="notation">∃</span> <a class="idref" href="NumberRealizability.RealizingMP.html#0f41ae37b5f2f6e148691ddf84146087"><span class="id" title="variable">φ</span></a>.<br/>
@@ -348,8 +403,8 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Lemma</span> <a id="MP_Prop_realizes_MP" class="idref" href="#MP_Prop_realizes_MP"><span class="id" title="lemma">MP_Prop_realizes_MP</span></a> (<a id="54d008a98fe9ec21d88bf6f9daacaf8f" class="idref" href="#54d008a98fe9ec21d88bf6f9daacaf8f"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>):<br/>
-&nbsp;&nbsp;<a class="idref" href="NumberRealizability.LogicalFacts.html#MP_Prop"><span class="id" title="definition">MP_Prop</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a><br/>
+<span class="id" title="keyword">Lemma</span> <a id="MP_decidable_realizes_MP" class="idref" href="#MP_decidable_realizes_MP"><span class="id" title="lemma">MP_decidable_realizes_MP</span></a> (<a id="54d008a98fe9ec21d88bf6f9daacaf8f" class="idref" href="#54d008a98fe9ec21d88bf6f9daacaf8f"><span class="id" title="binder">φ</span></a> : <span class="id" title="inductive">form</span>):<br/>
+&nbsp;&nbsp;<a class="idref" href="NumberRealizability.LogicalFacts.html#MP_decidable"><span class="id" title="definition">MP_decidable</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a><br/>
 &nbsp;&nbsp;<span class="id" title="inductive">bounded</span> 1 <a class="idref" href="NumberRealizability.RealizingMP.html#54d008a98fe9ec21d88bf6f9daacaf8f"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <br/>
 &nbsp;&nbsp;<a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">exists</span></a> <a id="c:100" class="idref" href="#c:100"><span class="id" title="binder">c</span></a><a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">,</span></a> <a class="idref" href="NumberRealizability.RealizingMP.html#c:100"><span class="id" title="variable">c</span></a> <a class="idref" href="NumberRealizability.RealizingMP.html#dfc5094f64f61d8da8a05561fb68887f"><span class="id" title="notation">⊩</span></a> <a class="idref" href="NumberRealizability.RealizingMP.html#dfc5094f64f61d8da8a05561fb68887f"><span class="id" title="notation">(</span></a><a class="idref" href="NumberRealizability.RealizingMP.html#MP_Prop_HA"><span class="id" title="definition">MP_Prop_HA</span></a> <a class="idref" href="NumberRealizability.RealizingMP.html#54d008a98fe9ec21d88bf6f9daacaf8f"><span class="id" title="variable">φ</span></a><a class="idref" href="NumberRealizability.RealizingMP.html#dfc5094f64f61d8da8a05561fb68887f"><span class="id" title="notation">)</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
@@ -368,7 +423,7 @@
 
 <br/>
 &nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">Hexm</span> : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">exists</span></a> <a id="m:103" class="idref" href="#m:103"><span class="id" title="binder"><span id="m:104" class="id">m</span></span></a> : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a><a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">,</span></a> <a class="idref" href="NumberRealizability.RealizingMP.html#m:103"><span class="id" title="variable">m</span></a> <a class="idref" href="NumberRealizability.RealizingMP.html#dfc5094f64f61d8da8a05561fb68887f"><span class="id" title="notation">⊩</span></a> <a class="idref" href="NumberRealizability.RealizingMP.html#dfc5094f64f61d8da8a05561fb68887f"><span class="id" title="notation">(</span></a><span class="id" title="notation">∃</span> φ<a class="idref" href="NumberRealizability.RealizingMP.html#dfc5094f64f61d8da8a05561fb68887f"><span class="id" title="notation">)</span></a>).<br/>
-&nbsp;&nbsp;{ <span class="id" title="tactic">eapply</span> <a class="idref" href="NumberRealizability.RealizingMP.html#MP_Prop_imp_real_ex"><span class="id" title="lemma">MP_Prop_imp_real_ex</span></a>; <span class="id" title="var">eassumption</span>. }<br/>
+&nbsp;&nbsp;{ <span class="id" title="tactic">eapply</span> <a class="idref" href="NumberRealizability.RealizingMP.html#MP_decidable_imp_real_ex"><span class="id" title="lemma">MP_decidable_imp_real_ex</span></a>; <span class="id" title="var">eassumption</span>. }<br/>
 <br/>
 &nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">Hexm</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">m</span> <span class="id" title="var">Hexm</span>].<br/>
 

@@ -25,8 +25,6 @@
 </div>
     <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
     <div id="main">
-<h1 class="libtitle">NumberRealizability.QRepresentableMP</h1>
-
 <div class="code">
 <span class="id" title="keyword">From</span> <span class="id" title="var">SyntheticComputability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">EPF</span> <span class="id" title="library">partial</span> <span class="id" title="library">equiv_on</span> <span class="id" title="library">Definitions</span> <span class="id" title="library">reductions</span> <span class="id" title="library">embed_nat</span>.<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">FOL</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">FullSyntax</span> <span class="id" title="library">Arithmetics</span>.<br/>
@@ -41,6 +39,15 @@
 <br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">FOL.Incompleteness</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">qdec</span> <span class="id" title="library">sigma1</span>.<br/>
 <span class="id" title="keyword">From</span> <span class="id" title="var">NumberRealizability</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="NumberRealizability.LogicalFacts.html#"><span class="id" title="library">LogicalFacts</span></a> <a class="idref" href="NumberRealizability.Core.html#"><span class="id" title="library">Core</span></a> <a class="idref" href="NumberRealizability.Facts.html#"><span class="id" title="library">Facts</span></a> <a class="idref" href="NumberRealizability.RealizingEnvTerms.html#"><span class="id" title="library">RealizingEnvTerms</span></a> <a class="idref" href="NumberRealizability.BoundedTactics.html#"><span class="id" title="library">BoundedTactics</span></a> <a class="idref" href="NumberRealizability.Soundness.html#"><span class="id" title="library">Soundness</span></a> <a class="idref" href="NumberRealizability.RealizingArithmetic.html#"><span class="id" title="library">RealizingArithmetic</span></a> <a class="idref" href="NumberRealizability.RealizingMP.html#"><span class="id" title="library">RealizingMP</span></a> <a class="idref" href="NumberRealizability.Sigma1Realizability.html#"><span class="id" title="library">Sigma1Realizability</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab34"></a><h1 class="section">Markov's Principle for Q-Representable Predicates</h1>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="QreprMP" class="idref" href="#QreprMP"><span class="id" title="section">QreprMP</span></a>.<br/>
@@ -69,10 +76,28 @@
 &nbsp;&nbsp;<span class="id" title="keyword">Existing Instance</span> <span class="id" title="instance">PA_funcs_signature</span>.<br/>
 
 <br/>
+</div>
+
+<div class="doc">
+<a id="lab35"></a><h2 class="section">Q-representability and MP_Q</h2>
+
+</div>
+<div class="code">
+
+<br/>
 <span class="id" title="keyword">Definition</span> <a id="Q_repr" class="idref" href="#Q_repr"><span class="id" title="definition">Q_repr</span></a> (<a id="P:9" class="idref" href="#P:9"><span class="id" title="binder">P</span></a> : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="keyword">Prop</span>) := <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">exists</span></a> <a id="ec4b304ddf42d851d75fca6932b4d645" class="idref" href="#ec4b304ddf42d851d75fca6932b4d645"><span class="id" title="binder">φ</span></a><a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">,</span></a> <span class="id" title="inductive">bounded</span> 1 <a class="idref" href="NumberRealizability.QRepresentableMP.html#ec4b304ddf42d851d75fca6932b4d645"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">/\</span></a> <span class="id" title="inductive">Σ1</span> <a class="idref" href="NumberRealizability.QRepresentableMP.html#ec4b304ddf42d851d75fca6932b4d645"><span class="id" title="variable">φ</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">/\</span></a> <span class="id" title="keyword">forall</span> <a id="x:11" class="idref" href="#x:11"><span class="id" title="binder">x</span></a>, <a class="idref" href="NumberRealizability.QRepresentableMP.html#P:9"><span class="id" title="variable">P</span></a> <a class="idref" href="NumberRealizability.QRepresentableMP.html#x:11"><span class="id" title="variable">x</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"><span class="id" title="notation">&lt;-&gt;</span></a> <span class="id" title="definition">Qeq</span> <span class="id" title="notation">⊢</span><span class="id" title="notation">I</span> <a class="idref" href="NumberRealizability.QRepresentableMP.html#ec4b304ddf42d851d75fca6932b4d645"><span class="id" title="variable">φ</span></a><span class="id" title="notation">[</span><span class="id" title="notation">(</span><span class="id" title="definition">num</span> <a class="idref" href="NumberRealizability.QRepresentableMP.html#x:11"><span class="id" title="variable">x</span></a><span class="id" title="notation">)</span>..<span class="id" title="notation">]</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Definition</span> <a id="MP_Q" class="idref" href="#MP_Q"><span class="id" title="definition">MP_Q</span></a> (<a id="P:12" class="idref" href="#P:12"><span class="id" title="binder">P</span></a> : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="keyword">Prop</span>) := <a class="idref" href="NumberRealizability.QRepresentableMP.html#Q_repr"><span class="id" title="definition">Q_repr</span></a> <a class="idref" href="NumberRealizability.QRepresentableMP.html#P:12"><span class="id" title="variable">P</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="definition">decidable</span> <a class="idref" href="NumberRealizability.QRepresentableMP.html#P:12"><span class="id" title="variable">P</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">(</span></a><a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~~</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">exists</span></a> <a id="n:13" class="idref" href="#n:13"><span class="id" title="binder">n</span></a><a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">,</span></a> <a class="idref" href="NumberRealizability.QRepresentableMP.html#P:12"><span class="id" title="variable">P</span></a> <a class="idref" href="NumberRealizability.QRepresentableMP.html#n:13"><span class="id" title="variable">n</span></a><a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">)</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">exists</span></a> <a id="n:14" class="idref" href="#n:14"><span class="id" title="binder">n</span></a><a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">,</span></a> <a class="idref" href="NumberRealizability.QRepresentableMP.html#P:12"><span class="id" title="variable">P</span></a> <a class="idref" href="NumberRealizability.QRepresentableMP.html#n:14"><span class="id" title="variable">n</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab36"></a><h2 class="section">Realizability of MP_HA forces MP_Q</h2>
+
+</div>
+<div class="code">
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="Pdec_imp_Fdec" class="idref" href="#Pdec_imp_Fdec"><span class="id" title="lemma">Pdec_imp_Fdec</span></a> (<a id="P:15" class="idref" href="#P:15"><span class="id" title="binder">P</span></a> : <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a> <a class="idref" href="http://rocq-prover.org/doc/V9.0.1/stdlib//Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="keyword">Prop</span>) : <br/>
