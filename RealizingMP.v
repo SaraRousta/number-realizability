@@ -10,7 +10,7 @@ Import ListNotations.
 
 From NumberRealizability Require Import LogicalFacts Core Facts.
 
-(** * Realizing Markov's Principle *)
+(** * Realizability of Markov's Principle *)
 
 
 Section RealizingMP.
@@ -78,7 +78,7 @@ Qed.
 
 End PartialityFacts.
 
-(** ** Realizer for Markov's Principle *)
+(** ** Realizing for Markov's Principle *)
 
 Lemma HA_dec_imp_dec_ex_real (φ : form) (d: nat) (α : env nat): 
   d ⊩[α] (∀ (φ ∨ ¬φ)) ->
