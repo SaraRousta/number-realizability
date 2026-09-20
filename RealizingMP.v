@@ -78,7 +78,7 @@ Qed.
 
 End PartialityFacts.
 
-(** ** Realizing for Markov's Principle *)
+(** ** Realizing Markov's Principle *)
 
 Lemma HA_dec_imp_dec_ex_real (φ : form) (d: nat) (α : env nat): 
   d ⊩[α] (∀ (φ ∨ ¬φ)) ->

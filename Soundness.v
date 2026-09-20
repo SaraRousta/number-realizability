@@ -9,7 +9,7 @@ Import ListNotations.
 
 From NumberRealizability Require Import LogicalFacts Core Facts RealizingEnvTerms BoundedTactics.
 
-(** * Soundness for Intuitionistic Natural Deduction in the Language of Arithmetic *)
+(** * Soundness and Consistency for Intuitionistic ND *)
 
 Section NumberRealizability.
   Variable Part : partiality.
@@ -218,7 +218,6 @@ Proof with try reflexivity.
       }
       { 
         (* ∃-elim *)
-
         repeat decompose_bounded.
         destruct (find_bounded (∃ φ)) as [neφ ?].
         destruct (find_bounded φ) as [nφ ?].
