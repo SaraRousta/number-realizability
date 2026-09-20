@@ -98,6 +98,7 @@ Section ComputabilityFacts.
   Qed.
 
   Lemma semi_decidable_V : semi_decidable V.
+  Proof.
     apply SemiDecidabilityFacts.semi_decidable_projection_iff.
     exists (fun '(n, (c, (x, v))) => seval (θ c x) n = Some v). split.
     apply dec_mat_V. 
